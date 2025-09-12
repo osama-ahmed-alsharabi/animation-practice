@@ -1,4 +1,4 @@
-import 'package:first_animation_practice/animated_widgets/padding_animated_widget.dart';
+import 'package:first_animation_practice/animated_widgets/text_style_animated_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -12,7 +12,10 @@ class _HomeViewState extends State<HomeView> {
   Color color = Colors.red;
   double height = 200;
   double width = 200;
-  double value= 50;
+  double value = 50;
+  String name = "osama";
+  double fontSize = 20;
+  FontWeight fontWeight = FontWeight.w500;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,13 +29,22 @@ class _HomeViewState extends State<HomeView> {
                 height = 400;
                 width = 400;
                 value = 20;
+
+                name = "Ahmed";
+                fontSize = 15;
+                fontWeight = FontWeight.bold;
                 setState(() {});
               },
               child: Text("change the color"),
             ),
             SizedBox(height: 20),
             Center(
-              child: PaddingAnimatedWidget(value: value)
+              child: TextStyleAnimatedWidget(
+                color: color,
+                text: "osama",
+                fontSize: fontSize,
+                fontWeight: fontWeight,
+              ),
             ),
           ],
         ),

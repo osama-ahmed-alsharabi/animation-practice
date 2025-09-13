@@ -1,4 +1,4 @@
-import 'package:first_animation_practice/animated_widgets/opacity_animated_widget.dart';
+import 'package:first_animation_practice/animated_widgets/physical_model_animated_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -58,7 +58,9 @@ class _HomeViewState extends State<HomeView> {
               child: Text("change the color"),
             ),
             SizedBox(height: 20),
-            Center(child: OpacityAnimatedWidget(opacity: opacity)),
+            Center(
+              child: PhysicalModelAnimatedWidget(color: color),
+            ),
           ],
         ),
       ),

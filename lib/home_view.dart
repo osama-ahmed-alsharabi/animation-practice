@@ -1,4 +1,4 @@
-import 'package:first_animation_practice/animated_widgets/text_style_animated_widget.dart';
+import 'package:first_animation_practice/animated_widgets/align_animated_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -17,12 +17,14 @@ class _HomeViewState extends State<HomeView> {
   double fontSize = 20;
   FontWeight fontWeight = FontWeight.w500;
   bool change = false;
+  AlignmentGeometry alignment = Alignment.topLeft;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ElevatedButton(
               onPressed: () {
@@ -36,6 +38,8 @@ class _HomeViewState extends State<HomeView> {
                   name = "Ahmed";
                   fontSize = 15;
                   fontWeight = FontWeight.bold;
+
+                  alignment = Alignment.topLeft;
                 } else {
                   color = Colors.red;
                   height = 200;
@@ -44,20 +48,15 @@ class _HomeViewState extends State<HomeView> {
                   name = "osama";
                   fontSize = 20;
                   fontWeight = FontWeight.w500;
+
+                  alignment = Alignment.topRight;
                 }
                 setState(() {});
               },
               child: Text("change the color"),
             ),
             SizedBox(height: 20),
-            Center(
-              child: TextStyleAnimatedWidget(
-                color: color,
-                text: "osama",
-                fontSize: fontSize,
-                fontWeight: fontWeight,
-              ),
-            ),
+            Center(child: AlignAnimatedWidget(alignment: alignment)),
           ],
         ),
       ),

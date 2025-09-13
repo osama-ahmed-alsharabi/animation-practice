@@ -16,6 +16,7 @@ class _HomeViewState extends State<HomeView> {
   String name = "osama";
   double fontSize = 20;
   FontWeight fontWeight = FontWeight.w500;
+  bool change = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +26,25 @@ class _HomeViewState extends State<HomeView> {
           children: [
             ElevatedButton(
               onPressed: () {
-                color = Colors.green;
-                height = 400;
-                width = 400;
-                value = 20;
+                change = !change;
+                if (change) {
+                  color = Colors.green;
+                  height = 400;
+                  width = 400;
+                  value = 20;
 
-                name = "Ahmed";
-                fontSize = 15;
-                fontWeight = FontWeight.bold;
+                  name = "Ahmed";
+                  fontSize = 15;
+                  fontWeight = FontWeight.bold;
+                } else {
+                  color = Colors.red;
+                  height = 200;
+                  width = 200;
+                  value = 50;
+                  name = "osama";
+                  fontSize = 20;
+                  fontWeight = FontWeight.w500;
+                }
                 setState(() {});
               },
               child: Text("change the color"),

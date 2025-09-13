@@ -1,4 +1,4 @@
-import 'package:first_animation_practice/animated_widgets/tween_animation_builder_widget.dart';
+import 'package:first_animation_practice/implicit_animation_widgets/tween_animation_builder_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
